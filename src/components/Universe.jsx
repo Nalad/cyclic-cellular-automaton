@@ -74,34 +74,36 @@ class Universe extends React.Component<
   }
 
   handleParamChange = (
-    event: SyntheticKeyboardEvent<HTMLInputElement> & {
-      target: HTMLInputElement
+    event: SyntheticEvent<HTMLInputElement> & {
+      currentTarget: HTMLInputElement
     },
     param: "range" | "threshold"
   ) => {
     const params = Object.assign({}, this.state.params, {
-      [param]: event.target.value
+      [param]: +event.currentTarget.value
     });
     this.setState({ params });
   };
 
   handleMaxNumberOfStatesChange = (
-    event: SyntheticKeyboardEvent<HTMLInputElement> & {
-      target: HTMLInputElement
+    event: SyntheticEvent<HTMLInputElement> & {
+      currentTarget: HTMLInputElement
     }
   ) => {
     const params = Object.assign({}, this.state.params, {
-      maxNumberOfStates: event.target.value
+      maxNumberOfStates: +event.currentTarget.value
     });
     this.setState({ params });
-    this.resetBoard(event.target.value);
+    this.resetBoard(+event.currentTarget.value);
   };
 
   handleRangeFunctionChange = (
-    event: SyntheticEvent<HTMLInputElement> & { target: HTMLInputElement }
+    event: SyntheticEvent<HTMLInputElement> & {
+      currentTarget: HTMLInputElement
+    }
   ) => {
     let rangeFunction;
-    switch (event.target.id) {
+    switch (event.currentTarget.id) {
       case "moore":
         rangeFunction = Utilities.countMooreNeighborhood.bind(Utilities);
         break;

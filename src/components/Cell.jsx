@@ -10,8 +10,12 @@ const Div = styled.div`
   float: left;
 `;
 
-class Cell extends React.Component<{ color: string }> {
-  shouldComponentUpdate(nextProps) {
+type Props = {
+  color: string
+};
+
+class Cell extends React.Component<Props> {
+  shouldComponentUpdate(nextProps: Props) {
     return this.props.color !== nextProps.color;
   }
 
