@@ -53,7 +53,8 @@ class Universe extends React.Component<
       threshold: number,
       maxNumberOfStates: number,
       rangeFunction: Function
-    }
+    },
+    autoReinitialize: boolean
   }
 > {
   constructor(props: Props) {
@@ -75,7 +76,8 @@ class Universe extends React.Component<
         threshold: 3,
         maxNumberOfStates: 3,
         rangeFunction: Utilities.countMooreNeighborhood.bind(Utilities)
-      }
+      },
+      autoReinitialize: false
     };
   }
 
@@ -135,6 +137,15 @@ class Universe extends React.Component<
     rangeFunction: Function
   }) => {
     this.setState({ params });
+    if (this.state.autoReinitialize) this.resetBoard(params.maxNumberOfStates);
+  };
+
+  handleAutoReinitializeChange = (
+    event: SyntheticEvent<HTMLInputElement> & {
+      currentTarget: HTMLInputElement
+    }
+  ) => {
+    this.setState({ autoReinitialize: event.currentTarget.checked });
   };
 
   nextGeneration = () => {
@@ -208,6 +219,16 @@ class Universe extends React.Component<
             <Preset {...preset} handleParamsChange={this.handleParamsChange} />
           ))}
         </PresetsDiv>
+        <div>
+          <label htmlFor="autoRe">
+            <input
+              id="autoRe"
+              type="checkbox"
+              onChange={this.handleAutoReinitializeChange}
+            />
+            Auto reinitialize
+          </label>
+        </div>
       </FlexDiv>
     );
   }
