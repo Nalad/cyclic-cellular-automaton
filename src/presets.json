@@ -1,0 +1,128 @@
+[
+  {
+    "name": "313",
+    "range": 1,
+    "threshold": 3,
+    "states": 3,
+    "neighborhood": "moore"
+  },
+  {
+    "name": "Amoeba",
+    "range": 3,
+    "threshold": 10,
+    "states": 2,
+    "neighborhood": "neumann"
+  },
+  {
+    "name": "Black vs White",
+    "range": 5,
+    "threshold": 23,
+    "states": 2,
+    "neighborhood": "neumann"
+  },
+  {
+    "name": "Black vs White 2",
+    "range": 2,
+    "threshold": 5,
+    "states": 2,
+    "neighborhood": "neumann"
+  },
+  {
+    "name": "Boiling",
+    "range": 2,
+    "threshold": 2,
+    "states": 6,
+    "neighborhood": "neumann"
+  },
+  {
+    "name": "Bootstrap",
+    "range": 2,
+    "threshold": 11,
+    "states": 3,
+    "neighborhood": "moore"
+  },
+  {
+    "name": "CCA",
+    "range": 1,
+    "threshold": 1,
+    "states": 14,
+    "neighborhood": "neumann"
+  },
+  {
+    "name": "Cubism",
+    "range": 2,
+    "threshold": 5,
+    "states": 3,
+    "neighborhood": "neumann"
+  },
+  {
+    "name": "Cyclic Spirals",
+    "range": 3,
+    "threshold": 5,
+    "states": 8,
+    "neighborhood": "moore"
+  },
+  {
+    "name": "Diamond Spirals",
+    "range": 1,
+    "threshold": 1,
+    "states": 15,
+    "neighborhood": "neumann"
+  },
+  {
+    "name": "Fossil Debris",
+    "range": 2,
+    "threshold": 9,
+    "states": 4,
+    "neighborhood": "moore"
+  },
+  {
+    "name": "Fuzz",
+    "range": 4,
+    "threshold": 4,
+    "states": 7,
+    "neighborhood": "neumann"
+  },
+  {
+    "name": "Lava Lamp",
+    "range": 3,
+    "threshold": 15,
+    "states": 3,
+    "neighborhood": "moore"
+  },
+  {
+    "name": "Lava Lamp 2",
+    "range": 2,
+    "threshold": 10,
+    "states": 3,
+    "neighborhood": "moore"
+  },
+  {
+    "name": "Maps",
+    "range": 2,
+    "threshold": 3,
+    "states": 5,
+    "neighborhood": "neumann"
+  },
+  {
+    "name": "Perfect Spirals",
+    "range": 1,
+    "threshold": 3,
+    "states": 4,
+    "neighborhood": "moore"
+  },
+  {
+    "name": "Stripes",
+    "range": 3,
+    "threshold": 4,
+    "states": 5,
+    "neighborhood": "neumann"
+  },
+  {
+    "name": "Turbulent Phase",
+    "range": 2,
+    "threshold": 5,
+    "states": 8,
+    "neighborhood": "moore"
+  }
+]

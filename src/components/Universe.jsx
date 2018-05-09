@@ -5,6 +5,8 @@ import styled from "styled-components";
 import Cell from "./Cell";
 import Utilities from "../Utilities";
 import Params from "./Params";
+import Preset from "./Preset";
+import presets from "../presets.json";
 
 const COLS = 80;
 const ROWS = 64;
@@ -29,7 +31,15 @@ const Button = styled.button`
 const FlexDiv = styled.div`
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
+`;
+
+const PresetsDiv = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  width: 40%;
+  justify-content: center;
 `;
 
 type Props = {};
@@ -118,6 +128,15 @@ class Universe extends React.Component<
     this.setState({ params });
   };
 
+  handleParamsChange = (params: {
+    range: number,
+    threshold: number,
+    maxNumberOfStates: number,
+    rangeFunction: Function
+  }) => {
+    this.setState({ params });
+  };
+
   nextGeneration = () => {
     const newBoard = [];
     for (let i = 0; i < ROWS; i += 1) {
@@ -184,6 +203,11 @@ class Universe extends React.Component<
             {...this.state.params}
           />
         </div>
+        <PresetsDiv>
+          {presets.map(preset => (
+            <Preset {...preset} handleParamsChange={this.handleParamsChange} />
+          ))}
+        </PresetsDiv>
       </FlexDiv>
     );
   }
