@@ -1,6 +1,12 @@
 // @flow
 
 import React from "react";
+import styled from "styled-components";
+
+const Form = styled.form`
+  display: flex;
+  justify-content: center;
+`;
 
 const Params = (props: {
   handleParamChange: Function,
@@ -41,7 +47,7 @@ const Params = (props: {
         />
       </label>
     </form>
-    <form>
+    <Form>
       <label htmlFor="moore">
         <input
           id="moore"
@@ -64,7 +70,7 @@ const Params = (props: {
         />
         Neumann
       </label>
-    </form>
+    </Form>
   </div>
 );
 
