@@ -2,11 +2,23 @@
 
 import React from "react";
 import { render } from "react-dom";
-import styled from "styled-components";
+import { injectGlobal } from "styled-components";
 import Universe from "./components/Universe";
 
-const Div = styled.div`
-  font-family: sans-serif;
+// eslint-disable-next-line no-unused-expressions
+injectGlobal`
+  html {
+    height: 100%;
+  }
+
+  body {
+    height: 100%;
+    margin: 0;
+    font-family: verdana, arial, helvetica, sans-serif;
+    background-color: black;
+    color: white;
+    font-size: medium;
+  }
 `;
 
 const renderApp = () => {
@@ -15,9 +27,9 @@ const renderApp = () => {
     throw new Error("Can't find 'app' in index.html");
   } else {
     render(
-      <Div>
+      <div>
         <Universe />
-      </Div>,
+      </div>,
       app
     );
   }

@@ -13,6 +13,9 @@ const ROWS = 64;
 const COLORS = ["black", "yellow", "orange", "red"];
 
 const Row = styled.div`
+  min-width: 400px;
+  min-height: 5px;
+
   &:after {
     clear: both;
     display: table;
@@ -23,9 +26,10 @@ const Row = styled.div`
 const Button = styled.button`
   background: black;
   color: white;
-  border: white
-  border-radius: 0.8rem 0.8rem 0 0;
-  font-size: 1.6rem;
+  border: 0.1rem solid white;
+  border-radius: 0.8rem;
+  font-size: x-large;
+  outline: none;
 `;
 
 const FlexDiv = styled.div`
@@ -40,6 +44,14 @@ const PresetsDiv = styled.div`
   flex-wrap: wrap;
   width: 40%;
   justify-content: center;
+  margin-top: 0.5rem;
+  margin-bottom: 0.3rem;
+`;
+
+const ImageDiv = styled.div`
+  margin: 1rem;
+  box-shadow: 0px 0px 50px 10px #dba632;
+  z-index: -1;
 `;
 
 type Props = {};
@@ -77,7 +89,7 @@ class Universe extends React.Component<
         maxNumberOfStates: 3,
         rangeFunction: Utilities.countMooreNeighborhood.bind(Utilities)
       },
-      autoReinitialize: false
+      autoReinitialize: true
     };
   }
 
@@ -194,7 +206,7 @@ class Universe extends React.Component<
         >
           Reinitialize
         </Button>
-        <div>
+        <ImageDiv>
           {this.state.board.map(row => (
             <Row>
               {row.map(c => (
@@ -205,7 +217,7 @@ class Universe extends React.Component<
               ))}
             </Row>
           ))}
-        </div>
+        </ImageDiv>
         <div>
           <Params
             handleParamChange={this.handleParamChange}
@@ -224,6 +236,7 @@ class Universe extends React.Component<
             <input
               id="autoRe"
               type="checkbox"
+              checked={this.state.autoReinitialize}
               onChange={this.handleAutoReinitializeChange}
             />
             Auto reinitialize

@@ -6,6 +6,7 @@ import styled from "styled-components";
 const Form = styled.form`
   display: flex;
   justify-content: center;
+  text-shadow: 0.05rem 0.05rem 0.1rem black;
 `;
 
 const Params = (props: {
@@ -18,7 +19,7 @@ const Params = (props: {
   rangeFunction: Function
 }) => (
   <div>
-    <form>
+    <Form>
       <label htmlFor="range">
         Range:&nbsp;
         <input
@@ -46,7 +47,7 @@ const Params = (props: {
           value={props.maxNumberOfStates}
         />
       </label>
-    </form>
+    </Form>
     <Form>
       <label htmlFor="moore">
         <input

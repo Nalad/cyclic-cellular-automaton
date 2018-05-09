@@ -8,8 +8,10 @@ const Button = styled.button`
   width: auto;
   background: black;
   color: white;
-  border: 0.1rem white solid;
-  border-radius: 0.5rem;
+  box-shadow: 0.1rem 0.1rem 0.5rem white;
+  /*border: 0.1rem white solid;
+  border-radius: 0.5rem;*/
+  font-size: medium;
 `;
 
 const Preset = (props: {
